@@ -3,7 +3,7 @@ let attempt = document.getElementById('attempt');
 
 function guess() {
     let input = document.getElementById('user-guess');
-	if (answer.innerHTML == "" || attempt.innerHTML == "") {
+	if (answer.innerHTML == '' || attempt.innerHTML == '') {
 		setHiddenFields();
 	}
 	if (!validateInput(input.value)) {
@@ -14,9 +14,9 @@ function guess() {
 	if (getResults(input.value)) {
 		showAnswer(true);
 		showReplay();
-		return setMessage("You Win! :)");
+		return setMessage("You Win!");
 	} else if (attempt >= 10){
-		return setMessage('You Lose! :(');
+		return setMessage('You Lose!');
 		showAnswer(false);
 	} else {
 		return setMessage("Incorrect, try again.");
@@ -27,7 +27,7 @@ function guess() {
 
 function setHiddenFields () {
 	attempt = 0;
-	answer = Math.floor(Math.random()*9999);
+	answer = Math.floor(Math.random()*10000);
 	answer = answer.toString();
 	while (answer.length < 4) {
 		answer = 0 + answer;
